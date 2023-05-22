@@ -2,7 +2,10 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 const express = require("express");
+const serverless = require("serverless-http");
 const app = express();
+module.exports.handler = serverless(app);
+
 const path = require("path");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
@@ -26,6 +29,7 @@ const Review = require("./models/review");
 const userRoutes = require("./routes/users");
 const artRoutes = require("./routes/arts");
 const reviewRoutes = require("./routes/reviews");
+
 const { MongoStore } = require("connect-mongo");
 
 const MongoDBStore = require("connect-mongo")(session);
@@ -96,6 +100,7 @@ app.use((req, res, next) => {
 app.use("/", userRoutes);
 app.use("/gallery", artRoutes);
 app.use("/gallery/:id/reviews", reviewRoutes);
+app.use("/.netlify/functions/api", router);
 
 app.get("/", (req, res) => {
   res.render("home");
