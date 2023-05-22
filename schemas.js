@@ -5,7 +5,8 @@ module.exports.artSchema = Joi.object({
 		title: Joi.string().required(),
 		// images: Joi.string().required(),
 		subject: Joi.string().required(),
-		description: Joi.string()
+		description: Joi.string(),
+		// location: Joi.string(),
 	}).required(),
 	deleteImages: Joi.array()
 })
