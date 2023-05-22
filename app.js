@@ -51,7 +51,7 @@ app.use(morgan("tiny"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-const secrete = process.env.SECRET || "thisshouldbeabettersecret!";
+const secret = process.env.SECRET || "thisshouldbeabettersecret!";
 
 const store = new MongoDBStore({
   url: dbUrl,
