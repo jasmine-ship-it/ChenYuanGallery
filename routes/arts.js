@@ -14,10 +14,6 @@ router.route('/')
 	.get(catchAsync(arts.index))
 	// CREATE A NEW ART
 	.post(isLoggedIn, upload.array('image'), validateArt, catchAsync(arts.createArt))
-// .post(upload.array('image'), (req, res) => {
-// 	console.log(req.body, req.files);
-// 	res.send('it worked')
-// })
 
 //NEW
 router.get('/new', isLoggedIn, arts.renderNewForm);
