@@ -2,13 +2,7 @@ const express = require("express");
 const router = express.Router({ mergeParams: true });
 const Art = require("../models/art");
 const Review = require("../models/review");
-const {
-  isLoggedIn,
-  isAuthor,
-  validateArt,
-  isReviewAuthor,
-  validateReview,
-} = require("../middleware");
+const { isLoggedIn, isReviewAuthor, validateReview } = require("../middleware");
 const { reviewSchema } = require("../schemas.js");
 const catchAsync = require("../utils/catchAsync");
 const ExpressError = require("../utils/ExpressError");
