@@ -96,13 +96,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use("/", userRoutes);
-// app.use("/gallery", artRoutes);
-// app.use("/gallery/:id/reviews", reviewRoutes);
+app.use("/", userRoutes);
+app.use("/gallery", artRoutes);
+app.use("/gallery/:id/reviews", reviewRoutes);
 
 app.use("/.netlify/functions/api", userRoutes);
-app.use("/.netlify/functions/api/gallery", artRoutes);
-app.use("/.netlify/functions/api/gallery/:id/reviews", reviewRoutes);
+app.use("/.netlify/functions/api", artRoutes);
+app.use("/.netlify/functions/api", reviewRoutes);
 
 app.get("/", (req, res) => {
   res.render("home");
