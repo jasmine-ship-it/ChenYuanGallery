@@ -1,0 +1,80 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+  <h1 class="text-center">New Artwork</h1>
+  <div class="col-6 offset-3">
+    <div>
+      <form
+        action="/gallery"
+        method="POST"
+        novalidate
+        class="validated-form"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            class="form-control"
+            type="text"
+            name="art[title]"
+            id="title"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Subject</label>
+          <input
+            class="form-control"
+            type="text"
+            name="art[subject]"
+            id="subject"
+            required
+          />
+        </div>
+
+        <!-- <div class="mb-3">
+						<label for="location" class="form-label">Location</label>
+						<input class="form-control" type="text" name="art[location]" id="location" required>
+					</div> -->
+
+        <div class="input-group mb-3">
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            name="image"
+            multiple
+          />
+          <label class="input-group-text" for="image">Upload</label>
+        </div>
+
+        <!-- <input type="file" name="image" id="image" multiple> -->
+        <!-- <div class="mb-3">
+						<label for="src" class="form-label">Image</label>
+						<input class="form-control" type="text" name="art[src]" id="src" required>
+					</div> -->
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <div>
+            <textarea
+              class="form-control"
+              name="art[description]"
+              id="description"
+              cols="20"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-secondary">submit</button>
+        </div>
+      </form>
+
+      <div class="mb-3">
+        <a href="/gallery">Back</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<% layout('layouts/boilerplate')%>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link rel="stylesheet" href="/stylesheets/gallery.css" />
+
+<body>
+  <div class="container py-5">
+    <% for(let art of arts){ %> <% for(let img of art.images){ %>
+    <span class="gallery-span">
+      <a href="/gallery/<%=art._id%>">
+        <img class="art-images" src="<%=img.url%>" alt="" height="300px" />
+      </a>
+    </span>
+    <% } %> <% } %>
+  </div>
+</body>
