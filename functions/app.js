@@ -4,7 +4,6 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const serverless = require("serverless-http");
 const app = express();
-module.exports.handler = serverless(app);
 
 const path = require("path");
 const methodOverride = require("method-override");
@@ -118,6 +117,8 @@ app.use((err, req, res, next) => {
   if (!err.message) err.message = "something went wrong!";
   res.status(statusCode).render("error", { err });
 });
+
+module.exports.handler = serverless(app);
 
 app.listen(3000, () => {
   console.log("serving on port 3000");

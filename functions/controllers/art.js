@@ -1,9 +1,9 @@
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const Art = require("../models/art");
 const { cloudinary } = require("../cloudinary");
-const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
-const mapBoxToken = process.env.MAPBOX_TOKEN;
-const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
+// const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
+// const mapBoxToken = process.env.MAPBOX_TOKEN;
+// const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 
 module.exports.index = async (req, res) => {
   const arts = await Art.find({});
