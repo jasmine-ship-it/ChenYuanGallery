@@ -2,7 +2,6 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 const express = require("express");
-const serverless = require("serverless-http");
 const app = express();
 
 const path = require("path");
@@ -96,13 +95,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use("/", userRoutes);
-// app.use("/gallery", artRoutes);
-// app.use("/gallery/:id/reviews", reviewRoutes);
-
-app.use("/api/", userRoutes);
-app.use("/api/gallery", artRoutes);
-app.use("/api/:id/reviews", reviewRoutes);
+app.use("/", userRoutes);
+app.use("/gallery", artRoutes);
+app.use("/gallery/:id/reviews", reviewRoutes);
 
 app.get("/", (req, res) => {
   res.render("home");
@@ -117,8 +112,6 @@ app.use((err, req, res, next) => {
   if (!err.message) err.message = "something went wrong!";
   res.status(statusCode).render("error", { err });
 });
-
-module.exports.handler = serverless(app);
 
 app.listen(3000, () => {
   console.log("serving on port 3000");
