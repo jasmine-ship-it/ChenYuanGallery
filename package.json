@@ -8,6 +8,10 @@
     "start": "node app.js"
   },
   "keywords": [],
+  "engines": {
+    "npm": "^8.15.0",
+    "node": "^v16.17.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
