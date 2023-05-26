@@ -1,5 +1,12 @@
 .image-show {
   max-height: 75%;
   align-items: center;
-  scale: 0.5;
+  scale: 0.75;
+}
+
+@media screen and (max-width: 480px) {
+  .image-show {
+    max-height: 75%;
+    align-items: center;
+  }
 }

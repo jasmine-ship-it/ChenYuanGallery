@@ -8,7 +8,69 @@ body {
     url("https://res.cloudinary.com/daitivgiy/image/upload/v1685103476/portrait6_rucfpc.jpg");
   background-size: cover;
   background-position: center;
+  font-size: 1rem;
 }
+
+.bg {
+  animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgba(212, 163, 115, 0.25) 25%,
+    rgba(233, 237, 201, 0.25) 25%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+h1 {
+  font-family: monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+/* ************ */
+
+.view-gallery {
+  font-size: 1rem;
+  padding: 2px;
+}
+
+.main > a {
+  font-size: 1rem;
+}
+.title-container {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */
 
 .cover-container {
   max-width: 60vw;
@@ -30,4 +92,56 @@ body {
 .title-font {
   text-align: center;
   /* font-family: 'Edu QLD Beginner', cursive; */
+}
+
+@media screen and (max-width: 480px) {
+  .body {
+    font-size: 1rem;
+    background-size: cover;
+    background-position: left;
+  }
+  h1 {
+    font-family: monospace;
+  }
+  p {
+    line-height: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .cover-container {
+    max-width: 60vw;
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    border-bottom: 0.25rem solid transparent;
+  }
+
+  .nav-link:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .main > a {
+    font-size: 1rem;
+  }
+  .title-font {
+    text-align: center;
+    font-size: 1rem;
+    /* font-family: 'Edu QLD Beginner', cursive; */
+  }
+
+  footer > p {
+    font-size: 0.5rem;
+  }
+
+  .view-gallery {
+    font-size: 0.75rem;
+    padding: 1px;
+  }
 }
