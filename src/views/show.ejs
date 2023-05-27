@@ -1,14 +1,42 @@
 <% layout('layouts/boilerplate')%>
 	<link rel="stylesheet" href="/stylesheets/show.css">
 	<link rel="stylesheet" href="/stylesheets/stars.css">
-	<div class="row">
+	<div>
 		<!-- <div class="col-6"> -->
 		<!-- <div class="card mb-3"> -->
 		<% for(let img of art.images){ %>
-			<div class="card mb-3 shadow">
-				<img src="<%=img.url%>" class="img-fluid image-show" alt="">
+			<div class="">
+				<img src="<%=img.url%>" class="image-show justify-content-center" alt="image">
 				<% } %>
-					<div class="card-body">
+					<table class="table painting-description">
+						<tbody>
+							<tr>
+								<td>
+									Title:
+								</td>
+								<td>
+										<%=art.title%>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Description:
+								</td>
+								<td>
+									<%=art.description%>
+								</td>
+							</tr>
+							
+								<tr>
+								<td>Created by:</td>
+								<td>
+									<%=art.author.username%>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- <div class="card-body">
 						<h5 class="card-title">
 							<%=art.title%>
 						</h5>
@@ -22,7 +50,8 @@
 							Created by <%=art.author.username%>
 						</p>
 
-					</div>
+					</div> -->
+
 					<% if(currentUser && art.author.equals(currentUser._id)){%>
 						<div>
 
@@ -37,8 +66,8 @@
 
 	</div>
 	<% if(currentUser){ %>
-		<div class="col-6">
-			<h2>Leave a Review</h2>
+		<div class="review-section">
+			<p>Review</p>
 			<form action="/gallery/<%=art._id%>/reviews" method="POST" class="validated-form mb-3" novalidate>
 				<div class="mb-3">
 					<div class="mb-3">

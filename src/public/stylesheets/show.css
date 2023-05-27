@@ -1,7 +1,16 @@
 .image-show {
   max-height: 75%;
-  align-items: center;
-  scale: 0.75;
+  max-width: 100%;
+  height: auto;
+}
+
+.painting-description {
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.review-section {
+  font-size: 0.75rem;
 }
 
 @media screen and (max-width: 480px) {
