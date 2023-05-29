@@ -31,6 +31,7 @@ module.exports.login = (req, res) => {
   // 		return next(err);
   // 	}
   // })
+  // const redirectUrl = "/gallery";
   const redirectUrl = req.session.returnTo || "/gallery";
   // const referer = req.header('Referer') || '/'
   console.log("***************");
@@ -39,8 +40,8 @@ module.exports.login = (req, res) => {
   console.log("this is the final original url", req.originalUrl);
   console.log("this is the latest session id", req.session.id);
   console.log("***************");
-  delete req.session.returnTo;
-  res.redirect("redirectUrl");
+  // delete req.session.returnTo;
+  res.redirect(redirectUrl);
 };
 
 module.exports.logout = (req, res, next) => {
