@@ -18,8 +18,7 @@ body {
   border-radius: 20px;
   opacity: 1;
 }
-
-.gallery-span {
+.nav-item:hover {
   color: white;
 }
 
