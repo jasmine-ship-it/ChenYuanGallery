@@ -1,18 +1,30 @@
-.nav-link {
+/* .nav-link {
   color: rgba(129, 129, 129, 0.7);
   font-weight: 400;
-  font-size: large;
+  font-size: 1rem;
   opacity: 0.5;
-}
-
-.nav-link:hover {
-  border-bottom-color: rgba(0, 0, 0, 0.7);
-  color: rgba(255, 255, 255, 0.7);
-  opacity: 1;
-}
+} */
 
 .navbar-link {
   display: flex;
   flex-direction: column;
   align-content: space-between;
+}
+
+/* .nav-link:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.7);
+} */
+
+.nav-link {
+  font-weight: 400;
+  font-size: large;
+  margin-left: 2rem;
+  border-bottom: 0.25rem solid transparent;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  text-decoration: solid;
 }

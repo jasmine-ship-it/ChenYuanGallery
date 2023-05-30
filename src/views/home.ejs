@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/stylesheets/home.css">
-	<title>ChenYuan</title>
-</head>
+    <title>ChenYuan</title>
+  </head>
 
-<body class="d-flex text-center text-white">
-	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-		<header class="mb-auto">
-			<div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
 
-				<nav class="nav justify-content-center">
-					<% if(!currentUser){ %>
-						<a class="nav-link active nav-link" aria-current="page" href="/login">Login</a>
-						<a class="nav-link active nav-link" aria-current="page" href="/register">Register</a>
-						<% }else{ %>
-							<a class="nav-link active nav-link" aria-current="page" href="/logout">Logout</a>
-							<%}%>
-								<a class="nav-link active nav-link" aria-current="page" href="/">Home</a>
-								<a class="nav-link active nav-link" aria-current="page" href="/gallery">Gallery</a>
-								<a class="nav-link active nav-link" aria-current="page" href="/gallery/new">Upload</a>
-				</nav>
-			</div>
-		</header>
-		<main class="container">
-			<h1 class="float-md-left mb-3 title-font">Chen Yuan Art Gallery</h1>
-			<p class="lead">
-				Hello my name is Chen Yuan and welcome to my Art Gallery!
-				<br>
-				歡迎來到我的藝術畫廊
-				<br>
-				I started painting at the beginning of 2020 and I have
-				continued since.
-			</p>
-			<a href="/gallery" class="btn btn-lg btn-secondary font-weight-bold mb-3">View Gallery</a>
-			<footer>
-				<p>&copy; Jasmine_coding 2022</p>
-			</footer>
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-			<script src="/javascripts/validateForms.js"></script>
-		</main>
-</body>
+  </div>
+  <body class="d-flex text-center text-white justify-content-center flex-column">
+	<div class="p-3 flex-column">
+
+    <header class="container d-flex flex-column">
+		<%- include('./partials/header')%>
+    </header>
+	<main class="container intro-text flex-column">
+		
+      <h1 class="mb-5">Chen Yuan Art Gallery</h1>
+
+      <p class="lead">
+        Hello my name is Chen Yuan and welcome to my Art Gallery! I started painting at the beginning of 2020 and I have continued since.
+        <br />
+		<br/>
+        歡迎來到我的藝術畫廊
+      </p>
+      <a href="/gallery" class="btn btn-lg btn-secondary font-weight-bold mb-3 view-gallery-button"
+        >View Gallery</a
+      >
+      <footer>
+        <p>&copy; Jasmine_coding 2022</p>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/javascripts/validateForms.js"></script>
+    </main>
+	</div>
+    
+  </body>
+</html>

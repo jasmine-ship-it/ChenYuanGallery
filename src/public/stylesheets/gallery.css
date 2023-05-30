@@ -22,3 +22,17 @@ body {
 .gallery-span {
   color: white;
 }
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .art-images {
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+  }
+}
