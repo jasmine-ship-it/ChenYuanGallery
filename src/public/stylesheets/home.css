@@ -5,7 +5,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   font-size: 1rem;
-  height: 100vh;
 }
 
 .bg {
@@ -33,10 +32,6 @@ body {
   animation-duration: 5s;
 }
 
-.intro-text {
-  padding-top: 40%;
-}
-
 @keyframes slide {
   0% {
     transform: translateX(-25%);
@@ -60,14 +55,17 @@ body {
   border-bottom-color: rgba(255, 255, 255, 0.7);
   color: rgba(255, 255, 255, 0.7);
 }
+.footer-style {
+  margin: 0%;
+  padding: 0%;
+}
 
+.footer-text {
+  font-size: 0.5rem;
+}
 @media screen and (max-width: 480px) {
   p {
     line-height: 1.5rem;
-  }
-
-  .lead {
-    font-size: 1rem;
   }
 
   .nav-link {
@@ -85,11 +83,6 @@ body {
 
   .view-gallery-button {
     font-size: 0.75rem;
-    padding: 1px;
-  }
-}
-
-@media screen and (max-height: 516px) {
-  .intro-text {
+    padding: 2.5px;
   }
 }
