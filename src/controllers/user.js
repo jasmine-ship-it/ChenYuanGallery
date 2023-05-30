@@ -26,21 +26,13 @@ module.exports.renderLogin = (req, res) => {
 
 module.exports.login = (req, res) => {
   req.flash("success", "Welcome back!");
-  // req.session.reload(function (err) {
-  // 	if (err) {
-  // 		return next(err);
-  // 	}
-  // })
-  // const redirectUrl = "/gallery";
+  req.session.reload(function (err) {
+    if (err) {
+      return next(err);
+    }
+  });
+
   const redirectUrl = req.session.returnTo || "/gallery";
-  // const referer = req.header('Referer') || '/'
-  console.log("***************");
-  console.log("this is the final return to url", req.session);
-  // console.log({ referer })
-  console.log("this is the final original url", req.originalUrl);
-  console.log("this is the latest session id", req.session.id);
-  console.log("***************");
-  // delete req.session.returnTo;
   res.redirect(redirectUrl);
 };
 
