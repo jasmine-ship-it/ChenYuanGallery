@@ -1,0 +1,37 @@
+body {
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-size: cover;
+  background-position: center;
+}
+
+.art-images {
+  padding: 5px;
+  font-size: 0px;
+  border-radius: 20px;
+  opacity: 0.9;
+}
+
+.art-images:hover {
+  padding: 5px;
+  font-size: 0px;
+  border-radius: 20px;
+  opacity: 1;
+}
+.nav-item:hover {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .art-images {
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,24 @@
+.navbar-link {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.nav-link {
+  font-weight: 400;
+  font-size: large;
+  margin-left: 2rem;
+  border-bottom: 0.25rem solid transparent;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  text-decoration: solid;
+}
+
+.navbar {
+  display: block;
+  opacity: 0.5;
+  background-color: white;
+}
