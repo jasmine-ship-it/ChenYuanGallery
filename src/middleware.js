@@ -11,13 +11,6 @@ module.exports.isLoggedIn = (req, res, next) => {
         return next(err);
       }
     });
-
-    req.originalUrl = req.session.returnTo;
-    console.log("***************");
-    console.log("this is the original url", req.originalUrl);
-    console.log("this is the original session id", req.session.id);
-    redirectUrl = req.session.returnTo;
-    console.log("***************");
     req.flash("error", "you must be signed in");
     return res.redirect("/login");
   }
@@ -26,9 +19,6 @@ module.exports.isLoggedIn = (req, res, next) => {
 
 module.exports.isAuthor = async (req, res, next) => {
   const { id } = req.params;
-  // console.log('id is: ', id);
-  // console.log('req.user is: ', req.user);
-  // console.log('currentUser is: ', currentUser);
   const art = await Art.findById(id);
   console.log("art.author: ", art.author);
   if (!art.author.equals(req.user._id)) {
