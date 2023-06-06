@@ -31,13 +31,8 @@ module.exports.login = (req, res) => {
       return next(err);
     }
   });
-<<<<<<< Updated upstream
-
-  const redirectUrl = req.session.returnTo || "/gallery";
-=======
   const redirectUrl = req.session.returnTo || "/gallery";
   delete req.session.returnTo;
->>>>>>> Stashed changes
   res.redirect(redirectUrl);
 };
 
