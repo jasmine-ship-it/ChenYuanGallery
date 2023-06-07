@@ -32,11 +32,9 @@ const { MongoStore } = require("connect-mongo");
 
 const MongoDBStore = require("connect-mongo")(session);
 
-// const dbUrl = process.env.DB_URL;
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/art-gallery";
 //------------------------------------------------------------------
 mongoose.connect(dbUrl);
-console.log("deletethis");
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
@@ -88,7 +86,6 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-  // console.log(req.session)
   res.locals.currentUser = req.user;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");

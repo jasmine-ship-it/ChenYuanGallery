@@ -37,7 +37,7 @@
 					</table>
 				</div>
 
-					<% if(currentUser && art.author.equals(currentUser._id)){%>
+					<% if(currentUser && art.author.equals(currentUser._id)|| currentUser && currentUser.admin){%>
 						<div>
 
 							<form class="btn" action="/gallery/<%=art._id%>?_method=DELETE" method="POST">
