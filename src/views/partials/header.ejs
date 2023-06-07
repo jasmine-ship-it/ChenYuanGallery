@@ -53,12 +53,13 @@
             >Gallery</a
           >
         </li>
-
+        <% if(currentUser && currentUser.admin){%>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/gallery/new"
             >Upload</a
           >
         </li>
+        <%} %>
       </ul>
     </div>
   </div>
