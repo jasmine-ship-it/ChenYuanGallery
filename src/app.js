@@ -36,7 +36,7 @@ const MongoDBStore = require("connect-mongo")(session);
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/art-gallery";
 //------------------------------------------------------------------
 mongoose.connect(dbUrl);
-
+console.log("deletethis");
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
