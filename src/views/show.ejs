@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate')%>
-	<link rel="stylesheet" href="/stylesheets/show.css">
 	<link rel="stylesheet" href="/stylesheets/stars.css">
-	<div class="">
+	<link rel="stylesheet" href="/stylesheets/show.css">
+	<div>
 
 		<% for(let img of art.images){ %>
 			<div class="d-flex flex-column">
@@ -81,30 +81,39 @@
 						Looks good!
 					</div>
 				</div>
-				<button class="btn btn-success">Submit</button>
+				<button class="btn btn-success btn-sm">Submit</button>
 			</form>
 
 			<% } %>
 				<%for(let review of art.reviews){%>
-					<div class="mb-3 card">
-						<div class="card-body">
-							<p class="starability-result" data-rating="<%=review.rating%>">
-								Rating:<%=review.rating%>
-							</p>
-
-							<h6 class="card-subtitle mb-2 text-muted">by <%=review.author.username %>
-							</h6>
-							<p class="card-text">Review: <%=review.body%>
-							</p>
-							<form action="/gallery/<%=art._id%>/reviews/<%=review._id%>?_method=DELETE" method="post">
-								<% if(currentUser && review.author.equals(currentUser._id)){ %>
-									<button class="btn btn-danger">Delete</button>
-									<% } %>
-							</form>
+					<div class="review-container">
+						<div class="speech-wrapper">
+							<div class="bubble">
+								<div class="delete-container">
+									<form action="/gallery/<%=art._id%>/reviews/<%=review._id%>?_method=DELETE" method="post">
+										<% if(currentUser && review.author.equals(currentUser._id)||currentUser && currentUser.admin){ %>
+											<button class="close btn" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											<% } %>
+									</form>
+								</div>	
+								<div class="txt">
+							
+									<h6 class="name">by <%=review.author.username %>
+									</h6>
+									
+									<p class="message"><%=review.body%>
+									</p>
+									<div class="star-container">
+										<span class="starability-result timestamp" data-rating="<%=review.rating%>">
+										</span>
+									</div>
+									<div class="bubble-arrow"></div>
+								</div>	
+							</div>
 						</div>
 					</div>
-					<%}%>
+			<%}%>
 		</div>
-
-
-		</div>
+	</div>
